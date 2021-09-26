@@ -2,16 +2,16 @@ import React from 'react';
 import './Cars.css'
 
 const Cars = (props) => {
-    const {car} = props
+    const { car } = props
     const { carMake, carModel, carModelYear, driverName, rentPerDay, image } = car
     return (
         <div className="card card-item shadow-lg p-2">
             <img className="" src={image} className="card-img-top img-fluid" alt={carModel} />
-            
+
             <table className="table">
                 <tbody>
                     <tr>
-                        <th  colSpan="2">
+                        <th colSpan="2">
                             <h5 className="card-title text-center">Model: {carModel}</h5>
                         </th>
                     </tr>
@@ -35,7 +35,9 @@ const Cars = (props) => {
             </div>
 
             <div className="card-body d-flex justify-content-center">
-                <button onClick={() => props.handleAddtoCart(car)} className="btn btn-warning"><i className="fas fa-cart-plus"></i> add to cart</button>
+                <div>
+                    <button onClick={() => props.handleAddtoCart(car)} className="btn btn-warning"><i className="fas fa-cart-plus"></i> add to cart</button>
+                </div>
             </div>
         </div>
     );
