@@ -1,0 +1,12 @@
+.cars-showcase{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    position: relative;
+    top: -40px;
+}
+
+.cart{
+    position: relative;
+    top: -40px;
+}

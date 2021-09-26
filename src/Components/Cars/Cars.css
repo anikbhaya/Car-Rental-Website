@@ -1,0 +1,8 @@
+.card-item{
+    border-radius: 20px;
+    
+}
+.card-item img{
+    border-top-left-radius:13px;
+    border-top-right-radius: 13px;
+}
