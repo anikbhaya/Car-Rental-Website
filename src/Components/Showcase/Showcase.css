@@ -10,3 +10,29 @@
     position: relative;
     top: -40px;
 }
+
+#alert{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    top: 200px;
+    margin: 0 auto;
+    width: 600px;
+    z-index: 99;
+}
+
+#alert > div{
+    margin-bottom: 0;
+    padding: .4rem 1rem;
+}
+
+@media (max-width: 991px){
+    .cars-showcase{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px){
+    .cars-showcase{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

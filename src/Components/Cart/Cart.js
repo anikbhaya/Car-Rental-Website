@@ -22,9 +22,9 @@ const Cart = (props) => {
                 </tbody>
             </table>
 
-            <div className="px-3">
+            <div className="px-2">
                 {
-                    cart.map(product => <Cartitem key={product.id} product={product}></Cartitem>)
+                    cart.map(product => <Cartitem key={product.id} product={product} removeFromCart={props.removeFromCart}></Cartitem>)
                 }
             </div>
             <div className="card-body d-flex justify-content-center">
