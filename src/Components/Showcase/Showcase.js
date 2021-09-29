@@ -12,11 +12,15 @@ toast.configure()
 const Showcase = () => {
     const [cars, setCars] = useState([])
     const [cart, setCart] = useState([])
+    const [search, setSearch] = useState([])
 
     useEffect(() => {
         fetch('./rentData.json')
             .then(res => res.json())
-            .then(data => setCars(data))
+            .then(data => {
+                setCars(data)
+                setSearch(data)
+            })
     }, [])
 
     
@@ -36,6 +40,12 @@ const Showcase = () => {
         
     }
 
+    const handleChange = (event) => {
+        const searchText = event.target.value;
+        const result = cars.filter(car => car.carMake.toLowerCase().includes(searchText.toLowerCase()) || car.carModel.toLowerCase().includes(searchText.toLowerCase()))
+        setSearch(result)
+    }
+
     const removeFromCart = (productId) => {
         let newCart = [...cart];
         const remaining = newCart.filter(pw => pw.carModel !== productId)
@@ -46,12 +56,16 @@ const Showcase = () => {
 
     return (
         
-        <div className="container-lg">
+        <div id="showcase-container" className="container-lg">
+            
+            <div className="input-group pb-4 w-50 m-auto">
+                    <input onChange={handleChange} type="text" className="form-control" placeholder="Search Here..."/>
+                    <button className="btn btn-warning">Search</button>
+                </div>
             <div className="row px-3">
-      
                 <div className="col-7 col-md-8 col-lg-9 cars-showcase">
                     {
-                        cars.map(car => <Cars
+                        search.map(car => <Cars
                             key={car.id}
                             car={car}
                             handleAddtoCart={handleAddtoCart}

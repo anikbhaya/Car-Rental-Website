@@ -8,7 +8,6 @@ const Header = () => {
                 <h6>Find Your Car Rental Today!</h6>
                 <h1 className="fw-bold uppercase my-0">Brands You Trust At Prices You'll Love</h1>
                 <br />
-                <h2 className="pb-5 mt-0">Total Rent Budget: 100K</h2>
             </div>
         </div>
     );
